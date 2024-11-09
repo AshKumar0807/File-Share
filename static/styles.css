@@ -1,0 +1,89 @@
+:root {
+    --raisin-black: #1e1e24;
+    --penn-red: #92140c;
+    --floral-white: #fff8f0;
+    --space-cadet: #111d4a;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--floral-white);
+    color: var(--raisin-black);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.file-list {
+    display: grid;
+    gap: 15px;
+}
+
+
+.file-card {
+    background-color: white;
+    border: 1px solid var(--space-cadet);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(17, 29, 74, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.file-card:hover {
+    transform: scale(1.02);
+}
+
+.file-card-header {
+    font-weight: bold;
+    color: var(--space-cadet);
+    margin-bottom: 10px;
+}
+
+.file-card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.file-card-actions a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.download-link {
+    background-color: var(--space-cadet);
+    color: var(--floral-white);
+}
+
+.download-link:hover {
+    background-color: rgba(17, 29, 74, 0.8);
+}
+
+.delete-link {
+    background-color: var(--penn-red);
+    color: var(--floral-white);
+}
+
+.delete-link:hover {
+    background-color: rgba(146, 20, 12, 0.8);
+}
+
+.no-files {
+    text-align: center;
+    color: var(--raisin-black);
+    padding: 20px;
+    background-color: var(--floral-white);
+    border: 1px solid var(--space-cadet);
+    border-radius: 8px;
+}
