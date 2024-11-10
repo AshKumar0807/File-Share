@@ -7,34 +7,37 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>File Share</h1>
-        <p>Welcome, {{ current_user.username }}! <a href="{{ url_for('logout') }}">Logout</a></p>
-
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-        <p style="color: green;">{{ message }}</p>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-        <form method="post" enctype="multipart/form-data">
-            <p><input type="file" name="file"></p>
-            <p><input type="submit" value="Upload"></p>
-        </form>
-
-        <h2>Uploaded Files:</h2>
-        <ul>
-            {% for file in files %}
-            <li>
-                {{ file }}
-                <a href="{{ url_for('download_file', filename=file) }}">Download</a>
-                <a href="{{ url_for('delete_file', filename=file) }}"
-                    onclick="return confirm('Are you sure?')">Delete</a>
-            </li>
+    <p class="top-right">Welcome, {{ current_user.username }}! <a href="{{ url_for('logout') }}">Logout</a>
+    </p>
+    <div>
+        <div class="container glass-card">
+            <h1>File Share</h1>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p style="color: green;">{{ message }}</p>
             {% endfor %}
-        </ul>
+            {% endif %}
+            {% endwith %}
+
+            <form method="post" enctype="multipart/form-data">
+                <p><input type="file" name="file"> <input type="submit" value="Upload"></p>
+            </form>
+        </div>
+        <p style="margin-right: 20px;"></p>
+        <div class="scrollable-container glass-card">
+            <h2>Uploaded Files:</h2>
+            <ul>
+                {% for file in files %}
+                <li>
+                    {{ file }}
+                    <a href="{{ url_for('download_file', filename=file) }}">Download</a>
+                    <a href="{{ url_for('delete_file', filename=file) }}"
+                        onclick="return confirm('Are you sure?')">Delete</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </body>
 
