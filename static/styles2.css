@@ -1,0 +1,148 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-color: #fff;
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --button-bg: rgba(255, 255, 255, 0.25);
+    --button-hover: rgba(255, 255, 255, 0.35);
+    --error-color: #ff4444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-size: 2em;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background: var(--button-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.flash-message {
+    background: var(--error-color);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.auth-link-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-link {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+    border-bottom-color: var(--text-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 30px 20px;
+    }
+}

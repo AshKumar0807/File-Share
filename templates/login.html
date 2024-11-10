@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Share_Login</title>
+    <link rel="stylesheet" href="/static/styles2.css">
+</head>
+
+<body>
+    <div class="background-wrapper">
+        <div class="container">
+            <div class="glass-card">
+                <h1>Login</h1>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="flash-message">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <form action="{{ url_for('login') }}" method="post">
+                    <div class="form-group">
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+
+                <p class="auth-link-text">
+                    Don't have an account?
+                    <a href="{{ url_for('register') }}" class="auth-link">Register here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
