@@ -2,9 +2,14 @@
 
 A secure, multi-user file management system built with Flask that allows authenticated users to upload, download, and manage files through a web interface.
 
-[Insert screenshot of login page]
 
-[Insert screenshot of file management interface]
+<img width="1437" alt="Screenshot 2024-11-11 at 3 36 04 PM" src="https://github.com/user-attachments/assets/3d891ed4-5a47-4486-b073-c12973f903c5">
+
+
+<img width="1440" alt="Screenshot 2024-11-11 at 3 36 21 PM" src="https://github.com/user-attachments/assets/2e148819-5144-4812-938c-63a4075729b9">
+
+
+<img width="1440" alt="Screenshot 2024-11-11 at 3 39 42 PM" src="https://github.com/user-attachments/assets/41131d96-9bb5-4c18-8906-5db045d4fcea">
 
 ## Features
 
