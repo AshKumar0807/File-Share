@@ -1,39 +1,97 @@
-File Sharing Web Application
-This repository contains a simple and secure file-sharing web application built with Flask. The app allows users to upload, download, and manage files, with user authentication and file security.
+# Flask File Manager
 
-Features
-User Authentication: Secure login system using Flask-Login and hashed passwords.
-File Upload & Download: Users can upload various file types (e.g., txt, pdf, png, jpg, etc.) to a designated folder on the server.
-Database Management: Stores user credentials in a SQLite database using SQLAlchemy.
-Security: File uploads are sanitized, and user sessions are managed with secure authentication.
-Setup and Installation
-Clone the repository and navigate to the project folder:
+A secure, multi-user file management system built with Flask that allows authenticated users to upload, download, and manage files through a web interface.
 
-bash
-Copy code
-git clone <repository-url>
-cd file-sharing-app
-Install the required packages:
+[Insert screenshot of login page]
 
-bash
-Copy code
-pip install -r requirements.txt
-Configure the environment variables:
+[Insert screenshot of file management interface]
 
-Update the UPLOAD_FOLDER path and SECRET_KEY in the app.py file as needed.
-Initialize the database:
+## Features
 
-bash
-Copy code
-flask db init
-flask db migrate
-flask db upgrade
-Start the application:
+- 🔐 Secure user authentication system
+- 📤 File upload with extension validation
+- 📥 File download functionality
+- 🗑️ File deletion capabilities
+- 🔒 Protected routes with login requirements
+- 📁 Support for multiple file formats (txt, pdf, png, jpg, jpeg, gif, doc, docx, csv, xlsx, sql)
+- 💾 SQLite database for user management
+- 🎨 Clean and intuitive web interface
 
-bash
-Copy code
-flask run
-Usage
-Upload Files: Upload files of allowed types to share securely.
-Download Files: Access files securely via the web interface.
-Authentication: Only registered users can upload and download files.
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/flask-file-manager.git
+cd flask-file-manager
+```
+
+2. Create and activate a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+3. Install required packages:
+
+```bash
+pip install flask flask-login werkzeug flask-sqlalchemy
+```
+
+4. Configure the application:
+   - Set your `UPLOAD_FOLDER` path in `app.py`
+   - Change the `SECRET_KEY` to a secure value
+
+5. Initialize the database:
+
+```bash
+python app.py
+```
+
+## Usage
+
+1. Start the server:
+
+```bash
+python app.py
+
+or flask run
+```
+
+2. Access the application at `http://localhost:5002`
+
+3. Register a new account or login with existing credentials
+
+4. Upload, download, and manage your files through the web interface
+
+## Security Features
+
+- Password hashing using Werkzeug security
+- Secure filename handling
+- Protected file operations
+- Session management
+- File extension validation
+
+## Configuration
+
+The following environment variables can be modified in `app.py`:
+
+- `UPLOAD_FOLDER`: Directory where files will be stored
+- `ALLOWED_EXTENSIONS`: Tuple of allowed file extensions
+- `SECRET_KEY`: Application secret key for session management
+- `SQLALCHEMY_DATABASE_URI`: Database connection string
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
+
+## Planned Updates
+
+1. Feature to create folders
+2. Check for file duplication
+3. File upload records(uploader name, time, etc)
