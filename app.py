@@ -1,4 +1,3 @@
-# app.py
 import os
 from flask import Flask, render_template, request, send_file, redirect, url_for, flash
 from werkzeug.utils import secure_filename
