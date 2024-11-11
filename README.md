@@ -65,6 +65,10 @@ or flask run
 
 4. Upload, download, and manage your files through the web interface
 
+## NGROK
+
+Use ngrok to create a http tunnel for a this project
+
 ## Security Features
 
 - Password hashing using Werkzeug security
