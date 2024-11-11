@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 20px;
     min-height: 100vh;
-    background-image: url('/static/bg3.jpg');
+    background-image: url('/static/bg2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

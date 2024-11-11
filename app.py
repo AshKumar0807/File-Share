@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 
 # Configure the upload folder
-UPLOAD_FOLDER = '/Users/ash/Downloads'
+UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'doc', 'docx', 'csv', 'xlsx', 'sql'}
 
 app = Flask(__name__)
